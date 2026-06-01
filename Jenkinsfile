@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        state('Test') {
+        stage('Test') {
             agent {
                 docker {
                     image 'node:18-alpine'
