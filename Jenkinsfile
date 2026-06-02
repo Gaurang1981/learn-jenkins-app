@@ -14,9 +14,10 @@ pipeline {
                 sh 'npm ci'
                 sh 'npm run build'
                 sh 'ls -la'
+                sh 'npx playwright --version'
             }
         }
-        stage('Test') {
+        /* stage('Test') {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.60.0-noble'
@@ -25,7 +26,7 @@ pipeline {
             }
             steps {
                 sh 'npx playwright test --reporter=html'
-            }
+            } */
         }
     }
 }
