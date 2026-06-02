@@ -17,7 +17,7 @@ pipeline {
                 sh 'npx playwright --version'
             }
         }
-        /* stage('Test') {
+        stage('Test') {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
@@ -27,6 +27,6 @@ pipeline {
             steps {
                 sh 'npx playwright test --reporter=html'
             } 
-        } */
+        }
     }
 }
