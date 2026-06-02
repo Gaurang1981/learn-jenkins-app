@@ -19,14 +19,12 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'node:18-alpine'
+                    image 'mcr.microsoft.com/playwright:v1.60.0-noble'
                     reuseNode true
                 }
             }
             steps {
-                sh 'ls -la'
-                sh 'npm ci'
-                sh 'npm test'
+                sh 'npx playwright test --reporter=html'
             }
         }
     }
