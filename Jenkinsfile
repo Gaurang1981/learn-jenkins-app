@@ -12,8 +12,10 @@ pipeline {
             steps {
                 sh 'ls -la'
                 sh 'npm ci'
+                sh 'npm install -D wait-on'
                 sh 'npm run build'
                 sh 'npm start &'
+                
                 sh 'npx playwright --version'
             }
         }
