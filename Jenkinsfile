@@ -13,7 +13,7 @@ pipeline {
                 sh 'ls -la'
                 sh 'npm ci'
                 sh 'npm run build'
-                sh 'ls -la'
+                sh 'npm start &'
                 sh 'npx playwright --version'
             }
         }
