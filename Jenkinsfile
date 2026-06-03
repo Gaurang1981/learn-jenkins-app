@@ -15,7 +15,7 @@ pipeline {
                 sh 'npm install -D wait-on'
                 sh 'npm run build'
                 sh 'npm start &'
-                
+
                 sh 'npx playwright --version'
             }
         }
@@ -28,6 +28,7 @@ pipeline {
             }
             steps {
                 sh 'npx playwright test --reporter=html'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             } 
         }
     }
